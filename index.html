@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Toggle Switches</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <style>
+
+  .container {
+    width: 960px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .search-alert-switch {
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 20px;
+  }
+  .search-alert-switch .switch > span:before {
+    content: 'ON';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+    z-index: 1;
+    line-height: 40px;
+    width: 50px;
+    text-align: center;
+  }
+  .search-alert-switch .switch > span:after {
+    content: 'OFF';
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #666;
+    font-size: 12px;
+    z-index: 1;
+    line-height: 40px;
+    width: 50px;
+    text-align: center;
+  }
+  .alert-switch-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+  }
+  .alert-switch-toggle + .switch {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 5px;
+    width: 100px;
+    height: 39px;
+    z-index: 2;
+    border-radius: 3px;
+    transition: background-color 0.4s;
+    background-color: #f1f1f1;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  }
+  .alert-switch-toggle + .switch:after, 
+  .alert-switch-toggle + .switch:before {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+  }
+  .alert-switch-toggle + .switch:after {
+    width: 50px;
+    content: '|||';
+    text-align: center;
+    line-height: 37px;
+    background-color: #fff;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: margin 0.4s;
+    z-index: 10;
+    margin: 0;
+    font-size: 12px;
+    color: #999;
+  }
+
+  .alert-switch-toggle:checked + .switch {
+    background: green;
+  }
+
+  .alert-switch-toggle:checked + .switch:before {
+    background-color: #00b300;
+  }
+  .alert-switch-toggle:checked + .switch:after {
+    margin-left: 48px;
+    color: #00b300;
+  }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="search-alert-switch">
+      <span>
+        <label for="alert-toggle-1">Label
+          <input id="alert-toggle-1" class="alert-switch-toggle" type="checkbox">
+          <span class="switch"><span></span></span>
+        </label>
+      </span>
+    </div>
+  </div>
+  
+</body>
+</html>
